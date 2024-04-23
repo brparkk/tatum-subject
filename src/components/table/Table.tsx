@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./Table.module.css";
+import { useTableDataQuery } from "../../hooks/queries/useTableDataQuery";
+import { useTable } from "./useTable";
 
 function Table() {
+  const { data } = useTableDataQuery();
+  const tableRef = useRef<HTMLTableRowElement | null>(null);
+  const { tableData } = useTable(tableRef, data);
+
   return (
     <div className={styles.container}>
       <h2>Assets List</h2>
@@ -15,21 +21,15 @@ function Table() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">Karen</th>
-            <td>Web performance</td>
-            <td>36</td>
-          </tr>
-          <tr>
-            <th scope="row">Karen</th>
-            <td>Web performance</td>
-            <td>36</td>
-          </tr>
-          <tr>
-            <th scope="row">Karen</th>
-            <td>Web performance</td>
-            <td>36</td>
-          </tr>
+          {tableData.map((row) => (
+            <tr key={row.policyId}>
+              <td scope="row">{row.main}</td>
+              <td>{row.middle}</td>
+              <td>{row.sub}</td>
+              <td>{row.name}</td>
+            </tr>
+          ))}
+          <tr ref={tableRef} style={{ height: 0 }} />
         </tbody>
       </table>
     </div>

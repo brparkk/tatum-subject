@@ -1,0 +1,193 @@
+policyId,대분류,중분류,소분류,이름
+AWS-ACM-001,Identity & Crypto,Certificate Manager,,ACM 인증서 투명성 로깅 설정
+AWS-ACM-002,Identity & Crypto,Certificate Manager,,ACM 인증서 만료일 점검
+AWS-API-001,Networking,API Gateway,,API 게이트웨이 캐싱 활성화
+AWS-API-002,Networking,API Gateway,,API 게이트웨이 WAF 활성화
+AWS-ASG-001,Compute,Auto Scaling,,Auto Scaling 그룹 내 시작 템플릿의 민감정보 검토
+AWS-ASG-002,Compute,Auto Scaling,,중단된 프로세스가 있는 Auto Scaling 그룹 확인
+AWS-ASG-003,Compute,Auto Scaling,,Auto Scaling 그룹이 여러 가용 영역에 걸쳐 있는지 확인
+AWS-ASG-004,Compute,Auto Scaling,,Auto Scaling 그룹 내 시작 템플릿의 메타데이터 버전(V2) 설정
+AWS-CLF-001,Networking,CloudFront,,CloudFront 전송 중 데이터 암호화
+AWS-CLF-002,Networking,CloudFront,,CloudFront OAI 설정
+AWS-CLF-003,Networking,CloudFront,,CloudFront 로깅 활성화
+AWS-CLF-004,Networking,CloudFront,,CloudFront WAF 연결 
+AWS-CLF-005,Networking,CloudFront,,CloudFront 지리적 제한 활성화
+AWS-CLT-001,Logging,CloudTrail,,모든 리전에 CloudTrail 활성화
+AWS-CLT-002,Logging,CloudTrail,,CloudTrail 로그 파일 검증 활성화
+AWS-CLT-003,Logging,CloudTrail,,S3 버킷 정책 및 ACL의 퍼블릭 액세스 차단 설정
+AWS-CLT-004,Logging,CloudTrail,,CloudTrail 추적과 CloudWatch Logs 통합 설정
+AWS-CLT-005,Logging,CloudTrail,,CloudTrail S3 버킷의 서버 액세스 로깅 활성화
+AWS-CLT-006,Logging,CloudTrail,,CloudTrail 로그 보관 시 고객 마스터 키로 암호화
+AWS-CLT-007,Logging,CloudTrail,,VPC 플로우 로그 1년 이상 보관 설정
+AWS-CLT-008,Logging,CloudTrail,,S3 액세스 로그 1년 이상 보관 설정
+AWS-CLT-009,Logging,CloudTrail,,CloudFront 액세스 로그 1년 이상 보관 설정
+AWS-CLW-016,Monitoring,CloudWatch,,CloudWatch 로그 그룹의 보존 기간 설정
+AWS-CLW-017,Monitoring,CloudWatch,,CloudWatch 로그 그룹 KMS 암호화 설정
+AWS-CUSTOM-0014,EC2,test,,EC2 인스턴스의 VPC 엔드포인트 생성 여부 확인 (테스트)
+AWS-DDB-001,Database,DynamoDB,,DynamoDB 암호화 설정
+AWS-DDB-002,Database,DynamoDB,,DynamoDB 특정 시점으로 복구 활성화
+AWS-DDB-003,Database,DynamoDB,,DynamoDB 리소스 태그 지정
+AWS-DDB-004,Database,DynamoDB,,DynamoDB 백업 계획 설정
+AWS-DDB-005,Database,DynamoDB,,DynamoDB 전용 엔드포인트 사용 
+AWS-EBS-001,Storage,EBS,,연결된 EBS 볼륨 암호화 설정
+AWS-EBS-002,Storage,EBS,,EBS 스냅샷 Private 설정
+AWS-EBS-003,Storage,EBS,,EBS 백업 계획 설정
+AWS-EBS-004,Storage,EBS,,EBS 삭제 대기 상태 설정
+AWS-EBS-005,Storage,EBS,,EBS 스냅샷 암호화 설정
+AWS-EBS-006,Storage,EBS,,미사용 EBS 볼륨 삭제
+AWS-EC2-001,Compute,EC2,,EC2 인스턴스 세부 모니터링 활성화
+AWS-EC2-002,Compute,EC2,,EC2 종료 방지 활성화
+AWS-EC2-003,Compute,EC2,,EC2 리소스 태그 지정
+AWS-EC2-004,Compute,EC2,,EC2 인스턴스에 키 페어 액세스 설정
+AWS-EC2-005,Compute,EC2,,EC2 인스턴스 메타데이터 버전 설정
+AWS-EC2-006,Compute,EC2,,EBS 최적화 설정
+AWS-EC2-007,Compute,EC2,,AMI 공유 권한 설정
+AWS-EC2-008,Compute,EC2,,오래된 EC2 인스턴스 관리
+AWS-EC2-009,Compute,EC2,,EC2 인스턴스 인터넷 노출 여부
+AWS-EC2-011,Compute,EC2,,프라이빗 서브넷의 EC2에 퍼블릭 IP 할당 제한
+AWS-EC2-013,Compute,EC2,,EC2 시작 템플릿을 활용한 Anti-virus SW 혹은 프로그램 적용 여부 확인
+AWS-EC2-014,Compute,EC2,,중지된 EC2 인스턴스의 30일 이내 종료(제거) 여부 확인
+AWS-EC2-015,Compute,EC2,,퍼블릭 IP 주소 자동 할당 여부 확인
+AWS-EC2-016,Compute,EC2,,EC2 인스턴스의 VPC 엔드포인트 생성 여부 확인
+AWS-ECR-001,Container,ECR,,ECR KMS 암호화 
+AWS-ECR-002,Container,ECR,,ECR 푸시 시 이미지 스캔 설정
+AWS-ECR-003,Container,ECR,,ECR 태그 변경 불가능 설정
+AWS-EFS-001,Storage,EFS,,EFS 자동 백업 설정
+AWS-EFS-002,Storage,EFS,,EFS 암호화 설정
+AWS-EFS-003,Storage,EFS,,EFS 백업 계획 설정
+AWS-EFS-004,Storage,EFS,,EFS 다중 AZ 배포 설정
+AWS-EKS-001,Container,EKS,Control Plane Configuration,EKS 감사 로깅 활성화
+AWS-EKS-002,Container,EKS,Managed services,CMK를 사용한 Kubernetes Secrets 암호화 설정
+AWS-EKS-003,Container,EKS,Managed services,Control Plane Endpoint 접근 제어
+AWS-EKS-004,Container,EKS,Managed services,클러스터 전용 보안 그룹 설정
+AWS-EKS-005,Container,EKS,Managed services,클러스터 보안 그룹 규칙 중 인터넷 노출 제한
+AWS-EKS-006,Container,EKS,Managed services,Amazon GuardDuty EKS 런타임 모니터링 설정
+AWS-EKS-007,Container,EKS,Managed services,Kubnetes 최신 버전 업데이트 적용
+AWS-ELB-001,Networking,ELB,,ELB 보안 정책 최신 버전 설정
+AWS-ELB-002,Networking,ELB,,ELB에 사용된 인증서 갱신
+AWS-ELB-003,Networking,ELB,,ELB 삭제 방지 활성화
+AWS-ELB-004,Networking,ELB,,ELB 액세스 로깅 활성화
+AWS-ELB-005,Networking,ELB,,ELB HTTPS/TLS 리스너 설정
+AWS-ELB-006,Networking,ELB,,ALB 잘못된 헤더 필드 삭제 설정
+AWS-ELB-007,Networking,ELB,,ALB HTTP-HTTPS 리다이렉션 설정
+AWS-ELB-008,Networking,ELB,,ALB에 WAF 활성화
+AWS-ELB-009,Networking,ELB,,ELB 보안 그룹 규칙 검토
+AWS-ELC-001,Database,ElastiCache,,ElastiCache Redis 클러스터 자동 백업 설정
+AWS-ELC-002,Database,ElastiCache,,ElastiCache Redis 클러스터 EOL 버전 사용 제한
+AWS-ELC-003,Database,ElastiCache,,ElastiCache Redis 클러스터 전송 중 데이터 암호화 
+AWS-EMR-001,Analytics,EMR,,EMR 퍼블릭 액세스 차단
+AWS-GDT-001,Security,GuardDuty,,GuardDuty 활성화
+AWS-GDT-002,Security,GuardDuty,,GuardDuty 심각도 높음 결과 탐지
+AWS-IAM-001,Identity & Crypto,IAM,IAM Configuration,루트 사용자 계정의 액세스 키 제거
+AWS-IAM-002,Identity & Crypto,IAM,IAM Configuration,루트 사용자 계정의 MFA 활성화 
+AWS-IAM-003,Identity & Crypto,IAM,IAM Configuration,복잡한 비밀번호 규칙 설정
+AWS-IAM-004,Identity & Crypto,IAM,IAM Configuration,비밀번호 재사용 제한
+AWS-IAM-005,Identity & Crypto,IAM,IAM Configuration,콘솔 접근 권한이 부여된 사용자의 MFA 활성화
+AWS-IAM-006,Identity & Crypto,IAM,IAM Configuration,초기 액세스 키 사용 제한
+AWS-IAM-007,Identity & Crypto,IAM,IAM Configuration,90일 이상 사용하지 않는 자격 증명 비활성화
+AWS-IAM-008,Identity & Crypto,IAM,IAM Configuration,액세스 키 개수 제한 
+AWS-IAM-009,Identity & Crypto,IAM,IAM Configuration,액세스 키 90일 이내 교체
+AWS-IAM-010,Identity & Crypto,IAM,IAM Configuration,IAM 정책 설정 시 그룹으로 권한 관리
+AWS-IAM-012,Identity & Crypto,IAM,IAM Configuration,IAM 역할을 통한 리소스 액세스 제어
+AWS-IAM-013,Identity & Crypto,IAM,IAM Configuration,만료된 SSL/TLS 인증서 삭제
+AWS-IAM-014,Identity & Crypto,IAM,IAM Configuration,IAM 액세스 분석기 활성화
+AWS-IAM-015,Identity & Crypto,IAM,IAM Configuration,90일 이상 미접속 계정 삭제
+AWS-IAM-016,Identity & Crypto,IAM,Permissions,IAM 사용자에 태그 지정
+AWS-IAM-020,Identity & Crypto,IAM,IAM Configuration,패스워드 최대 사용기간 설정
+AWS-IAM-023,Identity & Crypto,IAM,Identity Center,Identity Center 미사용 계정 점검
+AWS-KMS-001,Identity & Crypto,KMS,,삭제가 예약된 키 여부 검토
+AWS-KMS-002,Identity & Crypto,KMS,,고객 관리형 키 자동 교체 설정
+AWS-KMS-003,Identity & Crypto,KMS,,고객 관리형 정책의 KMS 키 복호화 및 재암호화 작업 제한
+AWS-KMS-004,Identity & Crypto,KMS,,고객 인라인 정책의 KMS 키 복호화 및 재암호화 작업 제한
+AWS-LAM-002,Compute,Lambda,,Lambda 함수 VPC 액세스 설정
+AWS-LAM-003,Compute,Lambda,,Lambda 함수에 배달 못한 편지 대기열 구성
+AWS-LAM-004,Compute,Lambda,,Lambda 함수의 리소스 기반 정책 설정
+AWS-LAM-005,Compute,Lambda,,Lambda 함수의 최신 런타임 버전 사용
+AWS-LAM-006,Compute,Lambda,,Lambda 함수 커스텀 런타임 사용 제한
+AWS-MCE-001,Security,Macie,,Macie 활성화
+AWS-OSS-001,Analytics,OpenSearch Service,,OpenSearch 퍼블릭 액세스 제한
+AWS-OSS-002,Analytics,OpenSearch Service,,OpenSearch 노드 간 암호화 설정
+AWS-OSS-003,Analytics,OpenSearch Service,,OpenSearch 유휴 시 데이터 암호화 설정
+AWS-OSS-004,Analytics,OpenSearch Service,,OpenSearch Service 도메인의 VPC 엔드포인트 설정
+AWS-R53-001,Networking,Route53,,Route53 도메인 자동 갱신 활성화
+AWS-R53-002,Networking,Route53,,Route53 도메인 이전 잠금 설정
+AWS-RDS-001,Database,RDS,,RDS 데이터베이스 퍼블릭 액세스 제한
+AWS-RDS-002,Database,RDS,,RDS 데이터베이스 암호화 설정
+AWS-RDS-003,Database,RDS,,RDS 클러스터 자동 백업 설정
+AWS-RDS-004,Database,RDS,,RDS 스냅샷 퍼블릭 액세스 제한
+AWS-RDS-005,Database,RDS,,RDS 클러스터 삭제 방지 활성화
+AWS-RDS-006,Database,RDS,,RDS 백업 계획 설정
+AWS-RDS-007,Database,RDS,,RDS 로깅 활성화
+AWS-RDS-008,Database,RDS,,RDS 데이터베이스 확장 모니터링 활성화
+AWS-RDS-009,Database,RDS,,RDS 스냅샷 암호화
+AWS-RDS-010,Database,RDS,,RDS 데이터베이스 다중 AZ 배포 설정
+AWS-RDS-011,Database,RDS,,RDS 리소스 태그 지정
+AWS-RDS-012,Database,RDS,,RDS 마이너 버전 자동 업그레이드 설정
+AWS-RDS-013,Database,RDS,,RDS 퍼블릭 액세스 제한 및 라우팅 테이블 규칙 설정
+AWS-RED-001,Database,Redshift,,Redshift 클러스터 퍼블릭 액세스 제한
+AWS-RED-002,Database,Redshift,,Redshift 클러스터 암호화 설정
+AWS-RED-003,Database,Redshift,,Redshift 클러스터 로깅 활성화
+AWS-RED-004,Database,Redshift,,Redshift 클러스터 버전 업그레이드 설정
+AWS-RED-005,Database,Redshift,,Redshift 클러스터 전송 중 암호화 설정
+AWS-RED-006,Database,Redshift,,Redshift 클러스터 자동 스냅샷 설정
+AWS-S3-001,Storage,S3,,S3 버킷 기본 암호화 설정
+AWS-S3-002,Storage,S3,,S3 버킷 정책 HTTP 요청 거부 설정
+AWS-S3-003,Storage,S3,,S3 버킷의 MFA 삭제 활성화
+AWS-S3-004,Storage,S3,,퍼블릭 액세스 차단 설정
+AWS-S3-005,Storage,S3,,S3 버킷 태그 지정
+AWS-S3-006,Storage,S3,,S3 버킷 버전 관리 설정
+AWS-S3-007,Storage,S3,,S3 버킷의 객체 수준 로깅 이벤트 쓰기 설정
+AWS-S3-008,Storage,S3,,S3 버킷의 객체 수준 로깅 이벤트 읽기 설정
+AWS-S3-009,Storage,S3,,S3 버킷 객체 잠금 활성화
+AWS-S3-010,Storage,S3,,S3 버킷 정책 설정
+AWS-S3-011,Storage,S3,,S3 버킷 교차 리전 복제 활성화
+AWS-S3-012,Storage,S3,,S3 ACL 사용 제한
+AWS-S3-013,Storage,S3,,S3 전용 엔드포인트 사용
+AWS-S3-014,Storage,S3,,"S3 버킷 정책의 Action에 ""*"" 부여 제한 "
+AWS-S3-015,Storage,S3,,"S3 버킷 정책의 Resource에 ""*"" 부여 제한 "
+AWS-S3-016,Storage,S3,,"S3 버킷 정책의 Principal에 ""*"" 및 root 부여 제한 "
+AWS-S3-017,Storage,S3,,S3 버킷 교차 계정 공유 검토 
+AWS-S3-018,Storage,S3,,외부 AWS 계정을 위한 S3 버킷 정책 내 블랙리스트 작업 제한
+AWS-SHB-001,Security,Security Hub,,Security Hub 활성화
+AWS-SHD-001,Security,AWS Shield,,관리형 DDoS 보호 기능 활성화 여부
+AWS-SMG-001,Security,Secrets Manager,,Secrets Manager 보안 암호 자동 교체 활성화
+AWS-SNS-001,Monitoring,SNS,,SNS 주제 액세스 정책 설정
+AWS-SNS-002,Monitoring,SNS,,SNS 주제 암호화 설정
+AWS-TSG-001,Networking,Transit Gateway,,Transit Gateway 교차 계정 공유 검토 
+AWS-TSG-002,Networking,Transit Gateway,,Transit Gateway에 연결되지 않은 VPC 검토
+AWS-VPC-001,Networking,VPC,,네트워크 ACL에서 인터넷 원격 접속 제한
+AWS-VPC-002,Networking,VPC,,인스턴스 보안 그룹에서 인터넷 원격 접속 제한
+AWS-VPC-003,Networking,VPC,,기본 보안 그룹 사용 제한
+AWS-VPC-004,Networking,VPC,,VPC 내 멀티 서브넷 구성
+AWS-VPC-005,Networking,VPC,,인스턴스 보안 그룹에서 80/443 포트 외 인터넷 노출 제한
+AWS-VPC-006,Networking,VPC,,네트워크 ACL에서 80/443 포트 외 인터넷 노출 제한
+AWS-VPC-007,Networking,VPC,,VPC 플로우 로그 활성화
+AWS-VPC-008,Networking,VPC,,사이트 간 VPN 연결의 터널 작동 상태 설정
+AWS-VPC-009,Networking,VPC,,NAT 게이트웨이 관리
+AWS-VPC-010,Networking,VPC,,인터넷 게이트웨이 관리
+AWS-VPC-011,Networking,VPC,,"Oracle 1521, 2483 포트 차단 여부 "
+AWS-VPC-012,Networking,VPC,,MySQL 3306 포트 차단 여부 
+AWS-VPC-013,Networking,VPC,,Postgres 5432 포트 차단 여부 
+AWS-VPC-014,Networking,VPC,,Redis 6379 포트 차단 여부 
+AWS-VPC-015,Networking,VPC,,"MongoDB 27017, 27018 포트 차단 여부 "
+AWS-VPC-016,Networking,VPC,,"Cassandra 7199, 9160, 8888 포트 차단 여부 "
+AWS-VPC-017,Networking,VPC,,Memcached 11211 포트 차단 여부 
+AWS-VPC-018,Networking,VPC,,"FTP 20, 21 포트 차단 여부 "
+AWS-VPC-019,Networking,VPC,,Kafka 9092 포트 차단 여부 
+AWS-VPC-020,Networking,VPC,,Telnet 23 포트 차단 여부 
+AWS-VPC-021,Networking,VPC,,"Windows SQL 서버 1433, 1434 포트 차단 여부 "
+AWS-VPC-022,Networking,VPC,,"Elasticsearch/Kibana 9200, 9300, 5601 포트 차단 여부"
+AWS-VPC-023,Networking,VPC,,DNS 53 포트 차단 여부 
+AWS-VPC-024,Networking,VPC,,미사용 Network ACL 관리
+AWS-VPC-025,Networking,VPC,,미사용 보안 그룹 관리
+AWS-VPC-026,Networking,VPC,,미사용 탄력적 IP 관리
+AWS-VPC-027,Networking,VPC,,보안 그룹 규칙 개수 제한
+AWS-VPC-028,Networking,VPC,,보안 그룹 인바운드 트래픽 제어 설정
+AWS-VPC-029,Networking,VPC,,네트워크 ACL에 0.0.0.0/0 모든 포트 차단 여부 
+AWS-VPC-030,Networking,VPC,,기본 VPC 삭제 
+AWS-VPC-031,Networking,VPC,,라우팅 테이블 0.0.0.0/0 규칙 주기적 검토
+AWS-VPC-032,Networking,VPC,,EC2에 연결되지 않은 보안 그룹 관리
+AWS-VPC-033,Networking,VPC,,기본 보안 그룹의 초기 규칙 사용 제한 
+AWS-VPC-034,Networking,VPC,,"VPC 엔드포인트 정책의 Action, Resource, Prinicipal에  ""*"" 부여 제한 "
+AWS-VPC-035,Networking,VPC,,VPC Peering 교차 계정 공유 검토 
+AWS-VPC-036,Networking,VPC,,프라이빗 서브넷에 NAT 게이트웨이 존재 여부

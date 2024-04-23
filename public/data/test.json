@@ -1,0 +1,51 @@
+[
+  [
+    "EMR",
+    {
+      "": [
+        {
+          "policyId": "AWS-EMR-001",
+          "main": "Analytics",
+          "middle": "EMR",
+          "sub": "",
+          "name": "EMR 퍼블릭 액세스 차단"
+        }
+      ]
+    }
+  ],
+  [
+    "OpenSearch Service",
+    {
+      "": [
+        {
+          "policyId": "AWS-OSS-001",
+          "main": "Analytics",
+          "middle": "OpenSearch Service",
+          "sub": "",
+          "name": "OpenSearch 퍼블릭 액세스 제한"
+        },
+        {
+          "policyId": "AWS-OSS-002",
+          "main": "Analytics",
+          "middle": "OpenSearch Service",
+          "sub": "",
+          "name": "OpenSearch 노드 간 암호화 설정"
+        },
+        {
+          "policyId": "AWS-OSS-003",
+          "main": "Analytics",
+          "middle": "OpenSearch Service",
+          "sub": "",
+          "name": "OpenSearch 유휴 시 데이터 암호화 설정"
+        },
+        {
+          "policyId": "AWS-OSS-004",
+          "main": "Analytics",
+          "middle": "OpenSearch Service",
+          "sub": "",
+          "name": "OpenSearch Service 도메인의 VPC 엔드포인트 설정"
+        }
+      ]
+    }
+  ]
+]
