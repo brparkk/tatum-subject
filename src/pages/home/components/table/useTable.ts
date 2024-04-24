@@ -1,47 +1,55 @@
-import {useCallback, useEffect, useMemo, useState} from "react";
-import {TTableData} from "../../../../@types/tableType.ts";
-import {useTableDataQuery} from "../../../../hooks/queries/useTableDataQuery.ts";
-import {atom, useAtomValue} from "jotai";
-import {filtered_atom} from "../../../../store/atoms";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { TTableData } from "../../../../@types/tableType.ts";
+import { useTableDataQuery } from "../../../../hooks/queries/useTableDataQuery.ts";
+import { atom, useAtom, useAtomValue } from "jotai";
+import { filtered_atom, table_atom } from "../../../../store/atoms";
 
 const OFFSET = 30;
 
 export const useTable = (
-  tableRef: React.MutableRefObject<HTMLTableRowElement | null>,
+  tableRef: React.MutableRefObject<HTMLTableRowElement | null>
 ) => {
-  const {data} = useTableDataQuery();
-  const [page, setPage] = useState(0);
-  const [tableData, setTableData] = useState<TTableData[]>([]);
+  const { data } = useTableDataQuery();
+  // const [page, setPage] = useState(0);
+  const [tableData, setTableData] = useAtom(table_atom);
 
-  const filteredAtom = useAtomValue(filtered_atom)
-  const isFiltered = Object.values(filteredAtom).some((item) => item.length > 0);
-
+  const filteredAtom = useAtomValue(filtered_atom);
+  const isFiltered = Object.values(filteredAtom).some(
+    (item) => item.length > 0
+  );
 
   const filteredData = useCallback(() => {
     setTableData((prev) => {
       let newVal: TTableData[] = [];
       if (filteredAtom["main"].length > 0) {
-        newVal = prev.filter(item => filteredAtom["main"].includes(item.main))
+        newVal = prev.filter((item) =>
+          filteredAtom["main"].includes(item.main)
+        );
       }
 
       if (filteredAtom["middle"].length > 0) {
-        const filterVal = prev.filter(item => filteredAtom["middle"].includes(item.middle))
-        newVal = [...newVal, ...filterVal]
+        const filterVal = prev.filter((item) =>
+          filteredAtom["middle"].includes(item.middle)
+        );
+        newVal = [...newVal, ...filterVal];
       }
 
       if (filteredAtom["sub"].length > 0) {
-        const filterVal = prev.filter(item => filteredAtom["sub"].includes(item.sub))
-        newVal = [...newVal, ...filterVal]
+        const filterVal = prev.filter((item) =>
+          filteredAtom["sub"].includes(item.sub)
+        );
+        newVal = [...newVal, ...filterVal];
       }
 
       if (filteredAtom["name"].length > 0) {
-        const filterVal = prev.filter(item => filteredAtom["name"].includes(item.name))
-        newVal = [...newVal, ...filterVal]
+        const filterVal = prev.filter((item) =>
+          filteredAtom["name"].includes(item.name)
+        );
+        newVal = [...newVal, ...filterVal];
       }
 
-      return [...newVal].sort()
-    })
-
+      return [...newVal].sort();
+    });
   }, [filteredAtom]);
 
   useEffect(() => {
@@ -54,12 +62,11 @@ export const useTable = (
         return [...filtered, ...data];
       });
 
-
       if (isFiltered) {
-        filteredData()
+        filteredData();
       }
     }
-  }, [data, filteredData, isFiltered]);
+  }, [data, filteredData, isFiltered, setTableData]);
 
   // TODO infinite scroll
   // const handleObserver = (entries: IntersectionObserverEntry[]) => {
@@ -81,5 +88,5 @@ export const useTable = (
   //   }
   // }, [tableRef]);
 
-  return {tableData};
+  return { tableData };
 };

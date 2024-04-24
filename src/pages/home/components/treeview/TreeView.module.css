@@ -5,7 +5,6 @@
     list-style-image: url("../../../../assets/chevron-right.svg");
     list-style-position: inside;
 
-
     input[type="checkbox"] {
       display: none;
     }
@@ -29,7 +28,7 @@
     }
 
     label.open::after {
-      content: '-';
+      content: "-";
       font-size: 18px;
       width: 12px;
       height: 12px;
@@ -40,9 +39,8 @@
       top: -10px;
     }
 
-
     input[type="checkbox"]:checked + label::after {
-      content: '︎✔';
+      content: "︎✔";
       font-size: 12px;
       width: 12px;
       height: 12px;
@@ -61,5 +59,19 @@
 
   .sub-details {
     margin-left: 30px;
+  }
+
+  .selected {
+    background-color: #efefef;
+    font-size: 14px;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 0 4px;
+  }
+
+  .selectbox {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
   }
 }
