@@ -44,6 +44,26 @@ export const useTreeViews = () => {
     })
   }
 
+  const addAllFilter = (key: keyof FilteredAtom, value: any) => {
+    setFiltered((prev) => {
+      return {...prev, [key]: value}
+    })
+  }
+
+  const removeAllFilter = (key: keyof FilteredAtom) => {
+    setFiltered((prev) => {
+      return {...prev, [key]: []}
+    })
+  }
+
+  const resetFilter = () => {
+    setFiltered({
+      main: [],
+      middle: [],
+      sub: [],
+      name: [],
+    })
+  }
   const main = data && Object.groupBy(data, ({main}) => main);
   const mainArr = Object.entries(main || {});
 
@@ -83,12 +103,15 @@ export const useTreeViews = () => {
     setFiltered,
     addFilter,
     removeFilter,
+    addAllFilter,
+    removeAllFilter,
+    resetFilter,
     groupByData,
     isMainOpened,
     isMidOpened,
     isSubOpened,
     handleMainToggle,
     handleMidToggle,
-    handleSubToggle
+    handleSubToggle,
   };
 };

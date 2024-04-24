@@ -7,13 +7,16 @@ function TreeView() {
     filtered,
     addFilter,
     removeFilter,
+    addAllFilter,
+    removeAllFilter,
+    resetFilter,
     groupByData,
     isMainOpened,
     isMidOpened,
     isSubOpened,
     handleMainToggle,
     handleMidToggle,
-    handleSubToggle
+    handleSubToggle,
   } = useTreeViews();
 
   console.log(filtered, "filtered")
@@ -76,6 +79,9 @@ function TreeView() {
                                   <dd>
                                     <input type={"checkbox"} id={v.name as string} onChange={e => {
                                       if (e.target.checked) {
+                                        removeAllFilter("main")
+                                        removeAllFilter("middle")
+                                        removeAllFilter("sub")
                                         addFilter("name", v.name)
                                       } else {
                                         removeFilter("name", v.name)
@@ -95,6 +101,9 @@ function TreeView() {
                                   <li>
                                     <input type={"checkbox"} id={v.name as string} onChange={e => {
                                       if (e.target.checked) {
+                                        removeAllFilter("main")
+                                        removeAllFilter("middle")
+                                        removeAllFilter("sub")
                                         addFilter("name", v.name)
                                       } else {
                                         removeFilter("name", v.name)
