@@ -1,0 +1,65 @@
+.container {
+  width: 30%;
+
+  details > summary {
+    list-style-image: url("../../../../assets/chevron-right.svg");
+    list-style-position: inside;
+
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    input[type="checkbox"] + label {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border: 1px solid #939393;
+      border-radius: 2px;
+      position: relative;
+      top: 8px;
+
+      & > span {
+        position: absolute;
+        left: 20px;
+        top: -5px;
+        display: flex;
+        width: 200px;
+      }
+    }
+
+    label.open::after {
+      content: '-';
+      font-size: 18px;
+      width: 12px;
+      height: 12px;
+      text-align: center;
+      color: #939393;
+      position: absolute;
+      left: 0;
+      top: -10px;
+    }
+
+
+    input[type="checkbox"]:checked + label::after {
+      content: '︎✔';
+      font-size: 12px;
+      width: 12px;
+      height: 12px;
+      text-align: center;
+      color: #939393;
+      position: absolute;
+      left: 0;
+      top: -4px;
+      z-index: 1;
+    }
+  }
+
+  details[open] > summary {
+    list-style-image: url("../../../../assets/chevron-down.svg");
+  }
+
+  .sub-details {
+    margin-left: 30px;
+  }
+}
