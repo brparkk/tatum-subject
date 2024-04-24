@@ -1,10 +1,10 @@
-import { useTableDataQuery } from "../../../../hooks/queries/useTableDataQuery.ts";
-import { useAtom } from "jotai/index";
-import { FilteredAtom, filtered_atom } from "../../../../store/atoms";
-import { useEffect, useState } from "react";
+import {useTableDataQuery} from "../../../../hooks/queries/useTableDataQuery.ts";
+import {useAtom} from "jotai/index";
+import {FilteredAtom, filtered_atom} from "../../../../store/atoms";
+import {useEffect, useState} from "react";
 
 export const useTreeViews = () => {
-  const { data } = useTableDataQuery();
+  const {data} = useTableDataQuery();
   const [filtered, setFiltered] = useAtom(filtered_atom);
 
   const [isMainOpened, setIsMainOpened] = useState<boolean[]>([]);
@@ -46,25 +46,25 @@ export const useTreeViews = () => {
 
   const addFilter = (key: keyof FilteredAtom, value: any) => {
     setFiltered((prev) => {
-      return { ...prev, [key]: [...prev[key], value] };
+      return {...prev, [key]: [...prev[key], value]};
     });
   };
 
   const removeFilter = (key: keyof FilteredAtom, value: any) => {
     setFiltered((prev) => {
-      return { ...prev, [key]: prev[key].filter((item) => item !== value) };
+      return {...prev, [key]: prev[key].filter((item) => item !== value)};
     });
   };
 
   const addAllFilter = (key: keyof FilteredAtom, value: any) => {
     setFiltered((prev) => {
-      return { ...prev, [key]: value };
+      return {...prev, [key]: value};
     });
   };
 
   const removeAllFilter = (key: keyof FilteredAtom) => {
     setFiltered((prev) => {
-      return { ...prev, [key]: [] };
+      return {...prev, [key]: []};
     });
   };
 
@@ -76,15 +76,18 @@ export const useTreeViews = () => {
       name: [],
     });
   };
-  const main = data && Object.groupBy(data, ({ main }) => main);
+  // @ts-ignore
+  const main = data && Object.groupBy(data, ({main}) => main);
   const mainArr = Object.entries(main || {});
 
   const groupByData = mainArr.map(([main, value]) => {
-    const mid = value && Object.groupBy(value, ({ middle }) => middle);
+    // @ts-ignore
+    const mid = value && Object.groupBy(value, ({middle}) => middle);
     const midArr = Object.entries(mid || {});
 
     const subArr = midArr.map(([middle, value]) => {
-      const sub = value && Object.groupBy(value, ({ sub }) => sub);
+      // @ts-ignore
+      const sub = value && Object.groupBy(value, ({sub}) => sub);
       return [middle, sub];
     });
 

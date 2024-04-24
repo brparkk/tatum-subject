@@ -1,15 +1,15 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { TTableData } from "../../../../@types/tableType.ts";
-import { useTableDataQuery } from "../../../../hooks/queries/useTableDataQuery.ts";
-import { atom, useAtom, useAtomValue } from "jotai";
-import { filtered_atom, table_atom } from "../../../../store/atoms";
+import {useCallback, useEffect} from "react";
+import {TTableData} from "../../../../@types/tableType.ts";
+import {useTableDataQuery} from "../../../../hooks/queries/useTableDataQuery.ts";
+import {useAtom, useAtomValue} from "jotai";
+import {filtered_atom, table_atom} from "../../../../store/atoms";
 
-const OFFSET = 30;
+// const OFFSET = 30;
 
 export const useTable = (
   tableRef: React.MutableRefObject<HTMLTableRowElement | null>
 ) => {
-  const { data } = useTableDataQuery();
+  const {data} = useTableDataQuery();
   // const [page, setPage] = useState(0);
   const [tableData, setTableData] = useAtom(table_atom);
 
@@ -88,5 +88,5 @@ export const useTable = (
   //   }
   // }, [tableRef]);
 
-  return { tableData };
+  return {tableData};
 };
