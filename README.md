@@ -37,6 +37,8 @@ pnpm run dev
 
 ## 데모
 
+https://tatum-subject-cq3b.vercel.app/
+
 ## 테스트
 
 (1) 각 분류별 필터 옵션 노출 테스트
