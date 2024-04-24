@@ -152,20 +152,20 @@ function TreeView() {
           {/* main */}
           {filtered.main.map((item) => (
             <div className={styles.selected}>
-              <b>{item}</b>:all ({filtered.name.length})
+              <b>{item}</b> ({filtered.main.length})
             </div>
           ))}
           {/* middle */}
           {filtered.middle.map((item) => (
             <div className={styles.selected}>
-              <b>{item}</b> ({filtered.name.length})
+              <b>{item}</b> ({filtered.middle.length})
             </div>
           ))}
 
           {/* sub */}
           {filtered.sub.map((item) => (
             <div className={styles.selected}>
-              <b>{item}</b> ({filtered.name.length})
+              <b>{item}</b> ({filtered.sub.length})
             </div>
           ))}
 
