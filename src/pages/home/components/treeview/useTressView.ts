@@ -35,14 +35,15 @@ export const useTreeViews = () => {
       });
     };
 
-  //상위 부모 찾기
-  const findParent = (key: keyof FilteredAtom, value: any) => {
-    const parent = Object.entries(filtered).find(([k, v]) => {
-      return k === key && v.includes(value);
-    });
 
-    return parent;
-  };
+  const updateCheckbox = (key: keyof FilteredAtom, value: string) => (e) => {
+    // 하위 옵션의 상태에 따라 이름의 상태를 변경
+    if ((e.target as HTMLInputElement).checked) {
+      addFilter(key, value);
+    } else {
+      removeFilter(key, value);
+    }
+  }
 
   const addFilter = (key: keyof FilteredAtom, value: any) => {
     setFiltered((prev) => {
@@ -76,6 +77,7 @@ export const useTreeViews = () => {
       name: [],
     });
   };
+
   // @ts-ignore
   const main = data && Object.groupBy(data, ({main}) => main);
   const mainArr = Object.entries(main || {});
@@ -129,6 +131,6 @@ export const useTreeViews = () => {
     handleMainToggle,
     handleMidToggle,
     handleSubToggle,
-    findParent,
+    updateCheckbox
   };
 };
